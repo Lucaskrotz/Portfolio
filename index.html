@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lucas Krötz — Desenvolvedor de Software</title>
+  <meta name="description" content="Lucas Krötz, desenvolvedor de software. Sistemas web e empresariais com Laravel: ERP, módulos financeiros, APIs, integrações e sistemas multi-tenant.">
+  <meta name="author" content="Lucas Krötz">
+  <meta name="theme-color" content="#0E1621">
+  <!-- [PLACEHOLDER] troque pela URL final do site -->
+  <link rel="canonical" href="https://seudominio.com.br/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Lucas Krötz — Desenvolvedor de Software">
+  <meta property="og:description" content="Transformo ideias e processos em sistemas eficientes, escaláveis e sob medida.">
+  <meta property="og:url" content="https://seudominio.com.br/">
+  <!-- [PLACEHOLDER] imagem 1200x630 em assets/img/og-image.png -->
+  <meta property="og:image" content="https://seudominio.com.br/assets/img/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.replace('no-js', 'js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Início">
+        <span class="brand-mark" data-bind="initials">LK</span>
+        <span data-bind="name">Lucas Krötz</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+      <nav id="menu" class="nav" aria-label="Principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#servicos">Serviços</a>
+        <a class="nav-cta" href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-role" data-bind="role">Desenvolvedor de Software</p>
+          <h1 class="hero-name" data-bind="name">Lucas Krötz</h1>
+          <p class="hero-tagline" data-bind="tagline">Transformo ideias e processos em sistemas eficientes, escaláveis e sob medida.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn-ghost" href="#contato">Entre em contato</a>
+          </div>
+        </div>
+        <figure class="console" aria-label="Ilustração: log de um sistema em execução">
+          <figcaption class="console-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>storage/logs/app.log</span>
+          </figcaption>
+          <ol class="console-body" id="console" aria-hidden="true"></ol>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sobre" class="section reveal" aria-labelledby="sobre-titulo">
+      <div class="container split">
+        <div>
+          <h2 id="sobre-titulo">Sobre mim</h2>
+          <div class="avatar" id="avatar"></div>
+        </div>
+        <div>
+          <div class="prose" id="about-text"></div>
+          <h3 class="subhead">No que eu foco</h3>
+          <ul class="focus-list" id="about-focus"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section reveal" aria-labelledby="hab-titulo">
+      <div class="container">
+        <h2 id="hab-titulo">Habilidades</h2>
+        <ul class="skill-grid" id="skills"></ul>
+      </div>
+    </section>
+
+    <section id="tecnologias" class="section reveal" aria-labelledby="tec-titulo">
+      <div class="container">
+        <h2 id="tec-titulo">Tecnologias</h2>
+        <div class="tech-table" id="tech"></div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section reveal" aria-labelledby="proj-titulo">
+      <div class="container">
+        <h2 id="proj-titulo">Projetos</h2>
+        <ul class="project-grid" id="projects"></ul>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section reveal" aria-labelledby="exp-titulo">
+      <div class="container split">
+        <h2 id="exp-titulo">Experiência</h2>
+        <ol class="timeline" id="experience"></ol>
+      </div>
+    </section>
+
+    <section id="servicos" class="section reveal" aria-labelledby="serv-titulo">
+      <div class="container">
+        <h2 id="serv-titulo">O que posso desenvolver</h2>
+        <ul class="service-grid" id="services"></ul>
+      </div>
+    </section>
+
+    <section id="diferenciais" class="section reveal" aria-labelledby="dif-titulo">
+      <div class="container split">
+        <h2 id="dif-titulo">Como eu trabalho</h2>
+        <dl class="diff-list" id="differentials"></dl>
+      </div>
+    </section>
+
+    <section id="contato" class="section reveal" aria-labelledby="cont-titulo">
+      <div class="container split">
+        <div>
+          <h2 id="cont-titulo">Vamos conversar</h2>
+          <p class="lead">Tem um sistema para criar, integrar ou melhorar? Me conte o que precisa.</p>
+          <ul class="contact-links" id="contact-links"></ul>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-assunto">Assunto</label>
+            <input id="f-assunto" name="assunto" required>
+          </div>
+          <div class="field">
+            <label for="f-msg">Mensagem</label>
+            <textarea id="f-msg" name="mensagem" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong data-bind="name">Lucas Krötz</strong>
+        <span data-bind="role">Desenvolvedor de Software</span>
+      </div>
+      <ul class="footer-social" id="footer-social"></ul>
+      <small>© <span id="year">2026</span> <span data-bind="name">Lucas Krötz</span>. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
