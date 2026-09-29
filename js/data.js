@@ -9,112 +9,159 @@
 window.PORTFOLIO = {
   profile: {
     name: 'Lucas Krötz',
-    role: 'Desenvolvedor de Software',
-    tagline: 'Transformo ideias e processos em sistemas eficientes, escaláveis e sob medida.',
-    // Caminho da sua foto (ex.: 'assets/img/foto.webp'). Vazio = mostra as iniciais.
-    photo: '',
+    role: 'Desenvolvedor de Sistemas',
+    headline: 'Desenvolvo sistemas web, APIs, integrações e automações para empresas.',
+    summary: 'ERPs, módulos financeiros, emissão de NFSe e boletos, plataformas multi-tenant e integrações com serviços externos, em PHP e Laravel.',
+    // Caminho da sua foto (quadrada, ~800×800). Se o arquivo não existir, mostra as iniciais.
+    photo: 'assets/img/lucas-krotz.jpg',
     initials: 'LK',
   },
 
-  // Linhas exibidas no console do Hero (ilustrativas, não são dados reais)
+  // Linhas do log no card do Hero (ilustrativas, não são dados reais)
   heroConsole: [
-    ['GET', '/api/v1/clientes', '200', '38ms'],
-    ['POST', '/webhooks/pagamento', '200', 'recebido'],
-    ['JOB', 'GerarBoleto', 'OK', '120ms'],
-    ['JOB', 'EmitirNotaFiscal', 'OK', '310ms'],
-    ['GET', '/dashboard/financeiro', '200', '54ms'],
-    ['TENANT', 'empresa-b › migrate', 'OK', '1.2s'],
-    ['POST', '/api/v1/chamados', '201', '41ms'],
-    ['JOB', 'ConciliarPagamentos', 'OK', '870ms'],
-    ['GET', '/relatorios/vendas.pdf', '200', '220ms'],
+    ['POST', '/webhooks/pagamento', '200'],
+    ['JOB', 'EmitirNFSe', 'OK'],
+    ['JOB', 'GerarBoleto', 'OK'],
+    ['GET', '/api/v1/clientes', '200'],
+    ['TENANT', 'empresa-b › migrate', 'OK'],
+    ['POST', '/api/v1/chamados', '201'],
+    ['JOB', 'ConciliarPagamentos', 'OK'],
   ],
 
   about: {
     paragraphs: [
-      'Sou desenvolvedor de software na Valhalla-Desenvolvimentos, onde trabalho principalmente com sistemas web e aplicações empresariais.',
-      'Meu dia a dia envolve construir ERPs, módulos financeiros, emissão de notas fiscais e boletos, integrações com APIs e gateways de pagamento, dashboards, relatórios, controle de clientes e sistemas de chamados.',
-      'Prefiro soluções práticas: código organizado, arquitetura que aguenta crescer e sistemas que resolvem o processo real de quem usa.',
+      'Sou desenvolvedor na Valhalla-Desenvolvimentos, onde construo e mantenho sistemas web e aplicações empresariais.',
+      'Trabalho do banco de dados à interface: modelo os dados, escrevo as regras de negócio, exponho APIs, integro serviços externos e automatizo rotinas que antes eram manuais. Também assumo sistemas existentes para corrigir, evoluir e adicionar funcionalidades complexas.',
     ],
-    focus: [
+    areas: [
       'Desenvolvimento de sistemas',
-      'Soluções empresariais',
+      'Aplicações web',
+      'Sistemas empresariais e ERP',
+      'APIs e integrações',
+      'Bancos de dados',
       'Automação de processos',
-      'Integrações entre sistemas',
-      'Desenvolvimento de APIs',
-      'Sistemas multi-tenant',
+      'Funcionalidades complexas',
+      'Integração com serviços externos',
+      'Manutenção e evolução de sistemas',
+      'Soluções multi-tenant',
     ],
   },
-
-  skills: [
-    { icon: 'server', title: 'Desenvolvimento Backend', text: 'Regras de negócio, filas e serviços com PHP e Laravel.' },
-    { icon: 'layout', title: 'Desenvolvimento Frontend', text: 'Interfaces com Blade, Bootstrap, jQuery e AJAX.' },
-    { icon: 'plug', title: 'APIs e Integrações', text: 'APIs REST, webhooks e gateways de pagamento.' },
-    { icon: 'database', title: 'Banco de Dados', text: 'Modelagem e consultas em MySQL.' },
-    { icon: 'grid', title: 'Sistemas ERP', text: 'Financeiro, notas fiscais, boletos, clientes e relatórios.' },
-    { icon: 'layers', title: 'Sistemas Multi-Tenant', text: 'Várias empresas na mesma aplicação, com dados isolados.' },
-    { icon: 'refresh', title: 'Automação', text: 'Rotinas que tiram tarefas manuais do caminho.' },
-    { icon: 'building', title: 'Sistemas Empresariais', text: 'Chamados, dashboards e controles internos.' },
-  ],
-
-  // icon: nome do ícone no Devicon (https://devicon.dev). Vazio = sem ícone.
-  technologies: [
-    { group: 'Backend', items: [['PHP', 'php/php-original'], ['Laravel', 'laravel/laravel-original']] },
-    { group: 'Frontend', items: [['HTML', 'html5/html5-original'], ['CSS', 'css3/css3-original'], ['JavaScript', 'javascript/javascript-original'], ['Blade', 'laravel/laravel-original'], ['Bootstrap', 'bootstrap/bootstrap-original'], ['jQuery', 'jquery/jquery-original']] },
-    { group: 'Banco de dados', items: [['MySQL', 'mysql/mysql-original']] },
-    { group: 'Infraestrutura', items: [['Docker', 'docker/docker-original'], ['Linux', 'linux/linux-original'], ['Nginx', 'nginx/nginx-original']] },
-    { group: 'Integrações', items: [['APIs REST', ''], ['Webhooks', ''], ['Gateways de pagamento', '']] },
-    { group: 'Outros', items: [['Git', 'git/git-original'], ['GitHub', 'github/github-original'], ['Multi-tenant', '']] },
-  ],
-
-  // [PLACEHOLDER] Projetos de exemplo — substitua pelos seus.
-  // placeholder: true mostra o selo "Exemplo". image vazio = capa gerada.
-  projects: [
-    { placeholder: true, category: 'Sistema ERP', name: 'Nome do projeto ERP', description: '[PLACEHOLDER] Descreva o problema, o que o sistema faz e o resultado.', tech: ['Laravel', 'MySQL', 'Bootstrap'], image: '', url: '#' },
-    { placeholder: true, category: 'Sistema Financeiro', name: 'Nome do projeto financeiro', description: '[PLACEHOLDER] Ex.: contas a pagar/receber, boletos e conciliação.', tech: ['Laravel', 'APIs REST', 'MySQL'], image: '', url: '#' },
-    { placeholder: true, category: 'Plataforma Multi-Tenant', name: 'Nome da plataforma', description: '[PLACEHOLDER] Ex.: várias empresas usando a mesma aplicação.', tech: ['Laravel', 'Docker', 'MySQL'], image: '', url: '#' },
-    { placeholder: true, category: 'Dashboard Empresarial', name: 'Nome do dashboard', description: '[PLACEHOLDER] Ex.: indicadores e relatórios para gestão.', tech: ['JavaScript', 'Laravel', 'MySQL'], image: '', url: '#' },
-    { placeholder: true, category: 'Integração de APIs', name: 'Nome da integração', description: '[PLACEHOLDER] Ex.: gateway de pagamento via API e webhooks.', tech: ['PHP', 'Webhooks', 'APIs REST'], image: '', url: '#' },
-    { placeholder: true, category: 'Atendimento / Chamados', name: 'Nome do sistema de chamados', description: '[PLACEHOLDER] Ex.: abertura, acompanhamento e histórico de chamados.', tech: ['Laravel', 'jQuery', 'AJAX'], image: '', url: '#' },
-  ],
 
   experience: [
     {
       company: 'Valhalla-Desenvolvimentos',
       role: 'Desenvolvedor de Software',
       period: '[PLACEHOLDER] ex.: 2023 — atual',
-      description: 'Desenvolvimento de sistemas web e aplicações empresariais: ERP, módulos financeiros, emissão de notas fiscais e boletos, integrações com APIs e gateways de pagamento, dashboards, relatórios e sistemas multi-tenant.',
+      description: 'Sistemas web e aplicações empresariais: ERP, módulos financeiros, NFSe, boletos, integrações com APIs e gateways de pagamento, dashboards, relatórios e plataformas multi-tenant.',
     },
     // Copie o bloco acima para adicionar mais experiências.
   ],
 
-  services: [
-    { icon: 'layout', title: 'Sistemas Web' },
-    { icon: 'grid', title: 'Sistemas ERP' },
-    { icon: 'code', title: 'APIs' },
-    { icon: 'plug', title: 'Integrações' },
-    { icon: 'refresh', title: 'Automação de processos' },
-    { icon: 'chart', title: 'Dashboards' },
-    { icon: 'wallet', title: 'Sistemas financeiros' },
-    { icon: 'wrench', title: 'Sistemas personalizados' },
-    { icon: 'layers', title: 'Sistemas multi-tenant' },
+  // Stack & Skills. icon = caminho no Devicon (https://devicon.dev); vazio = marcador simples.
+  // span: 'full' ocupa a linha inteira no desktop.
+  // Grade de 2 colunas: mantenha um número par de cards antes do 'full'.
+  stack: [
+    {
+      group: 'Backend', icon: 'server',
+      items: [['PHP', 'php/php-original'], ['Laravel', 'laravel/laravel-original'], ['Eloquent', ''], ['APIs REST', ''], ['Autenticação', ''], ['Multi-tenancy', '']],
+    },
+    {
+      group: 'Banco de dados', icon: 'database',
+      items: [['MySQL', 'mysql/mysql-original'], ['SQL', ''], ['Modelagem de dados', ''], ['Queries complexas', ''], ['Migrations', ''], ['Relacionamentos', '']],
+    },
+    {
+      group: 'Infraestrutura', icon: 'box',
+      items: [['Docker', 'docker/docker-original'], ['Laravel Sail', 'laravel/laravel-original'], ['Linux', 'linux/linux-original'], ['Ubuntu', 'ubuntu/ubuntu-original'], ['Nginx', 'nginx/nginx-original'], ['Git', 'git/git-original']],
+    },
+    {
+      group: 'Frontend', icon: 'layout',
+      items: [['HTML', 'html5/html5-original'], ['CSS', 'css3/css3-original'], ['JavaScript', 'javascript/javascript-original'], ['jQuery', 'jquery/jquery-original'], ['Bootstrap', 'bootstrap/bootstrap-original'], ['Blade', 'laravel/laravel-original'], ['AJAX', ''], ['DataTables', ''], ['Select2', ''], ['Chart.js', 'chartjs/chartjs-original']],
+    },
+    {
+      group: 'Integrações', icon: 'plug', span: 'full',
+      items: [['APIs REST', ''], ['Webhooks', ''], ['Gateways de pagamento', ''], ['Emissão de boletos', ''], ['NFSe', ''], ['WhatsApp', ''], ['Google OAuth', 'google/google-original'], ['Serviços financeiros', '']],
+    },
+  ],
+
+  // Experiência técnica: módulos de sistema que já desenvolvo
+  systems: [
+    { group: 'Gestão', icon: 'grid', items: ['Sistemas ERP', 'Gestão de clientes', 'Gestão de produtos', 'Kanban', 'Chamados'] },
+    { group: 'Financeiro', icon: 'wallet', items: ['Contas a pagar e receber', 'Boletos', 'Integrações bancárias', 'NFSe', 'Sistemas financeiros'] },
+    { group: 'Plataforma', icon: 'layers', items: ['Multi-tenancy', 'Usuários e permissões', 'APIs', 'Webhooks'] },
+    { group: 'Dados e automação', icon: 'chart', items: ['Relatórios', 'Dashboards', 'Automações'] },
+  ],
+
+  // Categorias disponíveis no filtro de projetos
+  projectFilters: ['ERP', 'Web', 'Backend', 'APIs', 'Integrações', 'Automação', 'Dashboards'],
+
+  // [PLACEHOLDER] Projetos de exemplo — substitua pelos seus.
+  // preview: 'table' | 'dashboard' | 'kanban' | 'api' | 'finance' (mockup gerado quando não há image)
+  // url vazio = sem botão "Ver projeto".
+  projects: [
+    {
+      placeholder: true, name: 'Nome do projeto ERP', categories: ['ERP', 'Web', 'Backend'], preview: 'table',
+      description: '[PLACEHOLDER] Descreva o problema que o sistema resolve.',
+      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
+      tech: ['Laravel', 'MySQL', 'Bootstrap'], image: '', url: '',
+    },
+    {
+      placeholder: true, name: 'Nome do módulo financeiro', categories: ['ERP', 'Integrações', 'Backend'], preview: 'finance',
+      description: '[PLACEHOLDER] Ex.: contas a pagar/receber, boletos e conciliação.',
+      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
+      tech: ['Laravel', 'MySQL', 'APIs REST'], image: '', url: '',
+    },
+    {
+      placeholder: true, name: 'Nome da plataforma multi-tenant', categories: ['Web', 'Backend'], preview: 'table',
+      description: '[PLACEHOLDER] Ex.: várias empresas usando a mesma aplicação, com dados isolados.',
+      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
+      tech: ['Laravel', 'Docker', 'MySQL'], image: '', url: '',
+    },
+    {
+      placeholder: true, name: 'Nome do dashboard', categories: ['Dashboards', 'Web'], preview: 'dashboard',
+      description: '[PLACEHOLDER] Ex.: indicadores e relatórios para gestão.',
+      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
+      tech: ['Chart.js', 'Laravel', 'MySQL'], image: '', url: '',
+    },
+    {
+      placeholder: true, name: 'Nome da integração', categories: ['APIs', 'Integrações', 'Automação'], preview: 'api',
+      description: '[PLACEHOLDER] Ex.: gateway de pagamento via API e webhooks.',
+      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
+      tech: ['PHP', 'Webhooks', 'APIs REST'], image: '', url: '',
+    },
+    {
+      placeholder: true, name: 'Nome do sistema de chamados', categories: ['Web', 'Automação'], preview: 'kanban',
+      description: '[PLACEHOLDER] Ex.: abertura, acompanhamento e histórico de chamados.',
+      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
+      tech: ['Laravel', 'jQuery', 'AJAX'], image: '', url: '',
+    },
+  ],
+
+  process: [
+    { title: 'Entendimento do problema', text: 'Converso com quem usa o processo hoje e levanto regras, exceções e gargalos.' },
+    { title: 'Planejamento da solução', text: 'Defino módulos, modelagem de dados, integrações necessárias e prioridades.' },
+    { title: 'Desenvolvimento', text: 'Entregas em partes, com código organizado e revisável.' },
+    { title: 'Integrações e testes', text: 'Conecto os serviços externos e valido os fluxos com dados reais.' },
+    { title: 'Implantação', text: 'Publicação em ambiente com Docker e Linux, com migração de dados quando necessário.' },
+    { title: 'Evolução e manutenção', text: 'Correções, melhorias e novas funcionalidades conforme o negócio muda.' },
   ],
 
   differentials: [
-    { title: 'Sob medida', text: 'O sistema segue o seu processo, não o contrário.' },
-    { title: 'Código organizado', text: 'Fácil de ler, manter e passar adiante.' },
-    { title: 'Integrações com APIs', text: 'Pagamentos, notas fiscais e outros sistemas conectados.' },
-    { title: 'Arquitetura escalável', text: 'Preparado para crescer em usuários e em empresas.' },
-    { title: 'Automação de processos', text: 'Menos tarefa manual, menos erro.' },
-    { title: 'Foco em segurança', text: 'Validação, controle de acesso e dados isolados por empresa.' },
-    { title: 'Responsividade', text: 'Funciona no computador, no tablet e no celular.' },
-    { title: 'Manutenção e evolução', text: 'Acompanhamento depois da entrega.' },
+    { icon: 'wrench', title: 'Sistemas sob medida', text: 'O sistema segue o processo da empresa, não o contrário.' },
+    { icon: 'building', title: 'Experiência com sistemas empresariais', text: 'ERP, financeiro, NFSe, boletos e chamados no dia a dia.' },
+    { icon: 'plug', title: 'Integração entre serviços', text: 'Bancos, gateways, WhatsApp, Google e outras APIs conectadas.' },
+    { icon: 'code', title: 'Desenvolvimento de APIs', text: 'APIs REST e webhooks para outros sistemas consumirem.' },
+    { icon: 'refresh', title: 'Automação de processos', text: 'Rotinas que eliminam trabalho manual e erros de digitação.' },
+    { icon: 'layers', title: 'Estrutura multi-tenant', text: 'Várias empresas na mesma aplicação, com dados isolados.' },
+    { icon: 'history', title: 'Sistemas existentes', text: 'Assumo, corrijo e evoluo código que já está em produção.' },
+    { icon: 'puzzle', title: 'Problemas complexos', text: 'Regras de negócio difíceis viram fluxos claros.' },
+    { icon: 'trend', title: 'Escalabilidade e organização', text: 'Código organizado, pronto para crescer.' },
   ],
 
   contact: {
     // [PLACEHOLDER] Substitua pelos seus dados. Link vazio = item não aparece.
     whatsapp: { label: '+55 (00) 00000-0000', url: 'https://wa.me/5500000000000' },
     email: { label: 'seuemail@exemplo.com', url: 'mailto:seuemail@exemplo.com' },
-    github: { label: 'github.com/seu-usuario', url: 'https://github.com/seu-usuario' },
+    github: { label: 'github.com/Lucaskrotz', url: 'https://github.com/Lucaskrotz' },
     linkedin: { label: 'linkedin.com/in/seu-usuario', url: 'https://www.linkedin.com/in/seu-usuario' },
     instagram: { label: '', url: '' },
     // Endpoint do formulário (ex.: Formspree). Vazio = abre o app de e-mail com a mensagem pronta.
