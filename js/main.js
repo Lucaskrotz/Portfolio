@@ -97,7 +97,7 @@
     finance: () => `<div class="m-main"><div class="m-kpis">${bars(2)}</div><div class="m-rows">${list(['ok', 'wait', 'ok', 'late', 'ok'], (s) => `<div class="m-row"><i></i><b class="${s}"></b></div>`)}</div></div>`,
   };
   const preview = (p) => p.image
-    ? `<img src="${esc(p.image)}" alt="Tela do projeto ${esc(p.name)}" width="800" height="500" loading="lazy" decoding="async">`
+    ? `<img src="${esc(p.image)}" alt="Tela do projeto ${esc(p.name)}" width="1280" height="720" loading="lazy" decoding="async">`
     : `<div class="mock" aria-hidden="true"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body">${(PREVIEWS[p.preview] || PREVIEWS.table)()}</div></div>`;
 
   $('projects').innerHTML = list(D.projects, (p, i) => `

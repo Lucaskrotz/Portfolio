@@ -1,7 +1,6 @@
 /**
  * ============================================================
  *  CONTEÚDO DO PORTFÓLIO — edite apenas este arquivo.
- *  Itens marcados com [PLACEHOLDER] devem ser substituídos.
  *  Obs.: nome/título/descrição para SEO também ficam no <head>
  *  do index.html (buscadores leem de lá).
  * ============================================================
@@ -51,7 +50,7 @@ window.PORTFOLIO = {
     {
       company: 'Valhalla-Desenvolvimentos',
       role: 'Desenvolvedor de Software',
-      period: '[PLACEHOLDER] ex.: 2023 — atual',
+      period: 'Atual',
       description: 'Sistemas web e aplicações empresariais: ERP, módulos financeiros, NFSe, boletos, integrações com APIs e gateways de pagamento, dashboards, relatórios e plataformas multi-tenant.',
     },
     // Copie o bloco acima para adicionar mais experiências.
@@ -94,45 +93,46 @@ window.PORTFOLIO = {
   // Categorias disponíveis no filtro de projetos
   projectFilters: ['ERP', 'Web', 'Backend', 'APIs', 'Integrações', 'Automação', 'Dashboards'],
 
-  // [PLACEHOLDER] Projetos de exemplo — substitua pelos seus.
-  // preview: 'table' | 'dashboard' | 'kanban' | 'api' | 'finance' (mockup gerado quando não há image)
-  // url vazio = sem botão "Ver projeto".
+  // Projetos (conteúdo de exemplo — troque pelos seus quando quiser).
+  // image: capa em assets/img/projetos/. Sem image, é gerado um mockup conforme
+  // preview: 'table' | 'dashboard' | 'kanban' | 'api' | 'finance'.
+  // placeholder: true mostra o selo "Exemplo". url vazio = sem botão "Ver projeto".
   projects: [
     {
-      placeholder: true, name: 'Nome do projeto ERP', categories: ['ERP', 'Web', 'Backend'], preview: 'table',
-      description: '[PLACEHOLDER] Descreva o problema que o sistema resolve.',
-      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
-      tech: ['Laravel', 'MySQL', 'Bootstrap'], image: '', url: '',
+      name: 'Gestor ERP', categories: ['ERP', 'Web', 'Backend'], preview: 'table',
+      description: 'ERP web para centralizar clientes, produtos, pedidos e relatórios de pequenas e médias empresas.',
+      features: ['Cadastro de clientes e produtos com busca e filtros', 'Pedidos com histórico e status', 'Perfis de usuário com permissões por módulo'],
+      tech: ['Laravel', 'MySQL', 'Bootstrap', 'DataTables'], image: 'assets/img/projetos/erp.svg', url: '',
     },
     {
-      placeholder: true, name: 'Nome do módulo financeiro', categories: ['ERP', 'Integrações', 'Backend'], preview: 'finance',
-      description: '[PLACEHOLDER] Ex.: contas a pagar/receber, boletos e conciliação.',
-      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
-      tech: ['Laravel', 'MySQL', 'APIs REST'], image: '', url: '',
+      name: 'Financeiro Integrado', categories: ['ERP', 'Integrações', 'Backend'], preview: 'finance',
+      description: 'Módulo de contas a pagar e receber com emissão de boletos e NFS-e integrada ao ERP.',
+      features: ['Geração e baixa automática de boletos', 'Emissão de NFS-e a partir do recebimento', 'Painel de vencidos e previsão de caixa'],
+      tech: ['Laravel', 'MySQL', 'APIs REST', 'Webhooks'], image: 'assets/img/projetos/financeiro.svg', url: '',
     },
     {
-      placeholder: true, name: 'Nome da plataforma multi-tenant', categories: ['Web', 'Backend'], preview: 'table',
-      description: '[PLACEHOLDER] Ex.: várias empresas usando a mesma aplicação, com dados isolados.',
-      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
-      tech: ['Laravel', 'Docker', 'MySQL'], image: '', url: '',
+      name: 'Plataforma Multi-Tenant', categories: ['Web', 'Backend'], preview: 'table',
+      description: 'Aplicação SaaS em que várias empresas usam o mesmo sistema, cada uma com seus dados isolados.',
+      features: ['Banco de dados isolado por empresa', 'Planos, usuários e permissões por tenant', 'Criação de novas empresas automatizada'],
+      tech: ['Laravel', 'Docker', 'MySQL', 'Nginx'], image: 'assets/img/projetos/multi-tenant.svg', url: '',
     },
     {
-      placeholder: true, name: 'Nome do dashboard', categories: ['Dashboards', 'Web'], preview: 'dashboard',
-      description: '[PLACEHOLDER] Ex.: indicadores e relatórios para gestão.',
-      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
-      tech: ['Chart.js', 'Laravel', 'MySQL'], image: '', url: '',
+      name: 'Painel de Indicadores', categories: ['Dashboards', 'Web'], preview: 'dashboard',
+      description: 'Dashboard gerencial com faturamento, ticket médio, inadimplência e chamados em um só lugar.',
+      features: ['Gráficos interativos por período', 'Indicadores atualizados a partir do ERP', 'Exportação de relatórios'],
+      tech: ['Chart.js', 'Laravel', 'MySQL', 'AJAX'], image: 'assets/img/projetos/dashboard.svg', url: '',
     },
     {
-      placeholder: true, name: 'Nome da integração', categories: ['APIs', 'Integrações', 'Automação'], preview: 'api',
-      description: '[PLACEHOLDER] Ex.: gateway de pagamento via API e webhooks.',
-      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
-      tech: ['PHP', 'Webhooks', 'APIs REST'], image: '', url: '',
+      name: 'Hub de Pagamentos', categories: ['APIs', 'Integrações', 'Automação'], preview: 'api',
+      description: 'Camada de integração com gateway de pagamento que recebe webhooks e dispara as ações do sistema.',
+      features: ['Recebimento e validação de webhooks', 'Baixa de títulos e emissão de NFS-e automáticas', 'Notificações de cobrança via WhatsApp'],
+      tech: ['PHP', 'Laravel', 'Webhooks', 'APIs REST'], image: 'assets/img/projetos/pagamentos.svg', url: '',
     },
     {
-      placeholder: true, name: 'Nome do sistema de chamados', categories: ['Web', 'Automação'], preview: 'kanban',
-      description: '[PLACEHOLDER] Ex.: abertura, acompanhamento e histórico de chamados.',
-      features: ['[PLACEHOLDER] Funcionalidade 1', '[PLACEHOLDER] Funcionalidade 2', '[PLACEHOLDER] Funcionalidade 3'],
-      tech: ['Laravel', 'jQuery', 'AJAX'], image: '', url: '',
+      name: 'Central de Chamados', categories: ['Web', 'Automação'], preview: 'kanban',
+      description: 'Sistema de atendimento com quadro Kanban, prioridades e acompanhamento de SLA.',
+      features: ['Quadro Kanban com arrastar e soltar', 'Prioridade e SLA por chamado', 'Histórico completo de cada atendimento'],
+      tech: ['Laravel', 'jQuery', 'AJAX', 'Select2'], image: 'assets/img/projetos/chamados.svg', url: '',
     },
   ],
 
@@ -158,11 +158,12 @@ window.PORTFOLIO = {
   ],
 
   contact: {
-    // [PLACEHOLDER] Substitua pelos seus dados. Link vazio = item não aparece.
-    whatsapp: { label: '+55 (00) 00000-0000', url: 'https://wa.me/5500000000000' },
-    email: { label: 'seuemail@exemplo.com', url: 'mailto:seuemail@exemplo.com' },
+    // Link vazio = item não aparece.
+    whatsapp: { label: '(55) 99627-8335', url: 'https://wa.me/5555996278335' },
+    email: { label: 'lkrotz23@gmail.com', url: 'mailto:lkrotz23@gmail.com' },
     github: { label: 'github.com/Lucaskrotz', url: 'https://github.com/Lucaskrotz' },
-    linkedin: { label: 'linkedin.com/in/seu-usuario', url: 'https://www.linkedin.com/in/seu-usuario' },
+    // Preencha com seu perfil (ex.: 'https://www.linkedin.com/in/seu-usuario') para o LinkedIn aparecer.
+    linkedin: { label: '', url: '' },
     instagram: { label: '', url: '' },
     // Endpoint do formulário (ex.: Formspree). Vazio = abre o app de e-mail com a mensagem pronta.
     formEndpoint: '',
