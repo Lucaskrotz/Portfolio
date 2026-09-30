@@ -1,7 +1,7 @@
 /*
  * Design system
  * - Skill UI/UX Pro Max: Bento Grid + Dark Mode, paleta índigo/violeta, Outfit + Work Sans.
- * - Referências: moldura, nome fino gigante, orbe desfocado e ponto de navegação (p5aholic.me);
+ * - Referências: nome fino gigante, orbe desfocado e ponto de navegação (p5aholic.me);
  *   cantos grandes, bordas de 1,5px, grão e intro em tom de conversa (itssharl.ee).
  */
 :root {
@@ -31,7 +31,6 @@
 
   --w: 1200px;
   --gutter: clamp(20px, 5vw, 56px);
-  --frame: 14px;
   --r-lg: 28px;
   --r-md: 20px;
   --r-sm: 12px;
@@ -54,11 +53,6 @@ body {
 body::before {
   content: ''; position: fixed; inset: 0; z-index: 90; pointer-events: none; opacity: .07;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-/* moldura (p5aholic.me) */
-body::after {
-  content: ''; position: fixed; inset: var(--frame); z-index: 80; pointer-events: none;
-  border: 1px solid var(--line-2); border-radius: var(--r-lg);
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
@@ -94,8 +88,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Header ---------- */
 .site-header {
-  position: fixed; top: calc(var(--frame) + 1px); left: calc(var(--frame) + 1px); right: calc(var(--frame) + 1px); z-index: 70;
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 70;
   transition: background-color var(--t), backdrop-filter var(--t);
 }
 .site-header.is-scrolled { background: rgba(11, 13, 24, .72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
@@ -126,7 +119,11 @@ button { font: inherit; color: inherit; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; padding: 140px 0 96px; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  /* some suavemente no fim do hero, sem linha de corte */
+  -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent);
+}
 /* orbe desfocado (p5aholic.me) */
 .hero-bg::before, .hero-bg::after {
   content: ''; position: absolute; border-radius: 50%; filter: blur(80px);
@@ -231,7 +228,7 @@ button { font: inherit; color: inherit; }
 .tl-item { padding: 20px 22px; border-radius: var(--r-md); border: var(--border) solid var(--line); background: var(--bg-2); }
 .tl-period { color: var(--muted); font-size: .9rem; }
 .tl-item h3 { font-size: 1.2rem; margin: 4px 0 8px; font-weight: 500; }
-.tl-item h3 span { color: var(--muted); font-weight: 400; }
+.tl-item h3 span { display: block; margin-top: 2px; color: var(--muted); font: 400 1rem var(--font); }
 .tl-item > p:last-child { color: var(--text-2); font-size: .98rem; }
 .panel { padding: clamp(24px, 3vw, 32px); border-radius: var(--r-lg); background: var(--surface); border: var(--border) solid var(--line); }
 .panel-title { font-size: 1.125rem; font-weight: 500; margin-bottom: 18px; }
@@ -328,7 +325,9 @@ button { font: inherit; color: inherit; }
 .features .icon { width: 16px; height: 16px; color: var(--ok); }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
 .tags li { font: .78rem var(--mono); color: var(--muted); padding: 3px 9px; border-radius: 6px; background: rgba(243, 242, 249, .04); border: 1px solid var(--line); }
-.project .btn-small { align-self: flex-start; margin-top: 4px; }
+.project .btn-small { position: static; align-self: flex-start; margin-top: 4px; }
+/* Card inteiro clicável: o link "Ver projeto" cobre o card */
+.project .btn-small::after { content: ''; position: absolute; inset: 0; z-index: 1; }
 .empty { color: var(--muted); padding: 40px 0; text-align: center; }
 
 /* Mockups gerados (quando não há imagem) */
@@ -444,9 +443,6 @@ button { font: inherit; color: inherit; }
 }
 
 @media (max-width: 900px) {
-  :root { --frame: 0px; }
-  body::after { display: none; }
-  .site-header { top: 0; left: 0; right: 0; border-radius: 0; }
   .header-inner { height: 68px; }
   .menu-toggle {
     display: grid; align-content: center; gap: 6px; width: 44px; height: 44px; padding: 0 12px; cursor: pointer;
@@ -476,7 +472,12 @@ button { font: inherit; color: inherit; }
 
   .hero { min-height: 0; padding: 112px 0 72px; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-card { max-width: 440px; }
+  /* tablet: card horizontal, foto ao lado das informações */
+  .hero-card { display: grid; grid-template-columns: minmax(180px, 38%) 1fr; }
+  .photo { aspect-ratio: auto; min-height: 100%; }
+  .photo img { position: absolute; inset: 0; }
+  .photo::after { display: none; }
+  .hero-card-body { margin: 0; padding: 24px; align-self: center; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
 }
@@ -485,10 +486,8 @@ button { font: inherit; color: inherit; }
   body { font-size: 1rem; }
   /* no celular, a foto vem primeiro e compacta */
   .hero-inner { gap: 32px; }
-  .hero-card { order: -1; display: grid; grid-template-columns: 96px 1fr; align-items: center; border-radius: 24px; max-width: none; }
-  .photo { aspect-ratio: auto; width: 100%; height: 100%; min-height: 96px; }
-  .photo img { position: absolute; inset: 0; }
-  .photo::after { display: none; }
+  .hero-card { order: -1; grid-template-columns: 96px 1fr; align-items: center; border-radius: 24px; }
+  .photo { height: 100%; min-height: 96px; }
   .photo-fallback { font-size: 2.2rem; }
   .hero-card-body { margin: 0; padding: 14px 16px; }
   .hero-stack { margin-top: 8px; }
@@ -496,11 +495,29 @@ button { font: inherit; color: inherit; }
   .hero-hello { margin-top: 0; }
   .hero-actions .btn { flex: 1 1 100%; }
   .bento, .system-grid, .process, .diff-grid, .field-row { grid-template-columns: 1fr; }
-  .bento-card, .step, .module { padding: 20px; }
+  .section { padding: 64px 0; }
+  .section-head { margin-bottom: 32px; }
+  .bento { gap: 12px; }
+  .bento-card, .module { padding: 18px; }
+  .bento-card header { margin-bottom: 16px; }
+  .tech-list { gap: 6px; }
+  .tech { padding: 6px 12px; font-size: .9rem; gap: 7px; }
+  /* módulos viram etiquetas compactas */
+  .system { padding: 14px; border-radius: 24px; }
+  .system-core { margin-bottom: 14px; }
+  .system-grid { gap: 10px; }
+  .module h3 { margin-bottom: 12px; }
+  .module ul { display: flex; flex-wrap: wrap; gap: 6px; }
+  .module li { padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: .88rem; }
+  .module li::before { display: none; }
+  /* processo em linha: número ao lado do texto */
+  .process { gap: 10px; }
+  .step { display: grid; grid-template-columns: 52px 1fr; column-gap: 12px; padding: 18px; }
+  .step-n { grid-row: span 2; margin: 0; font-size: 2rem; }
+  .step h3 { margin-bottom: 4px; }
   .diff-grid { gap: 10px; }
   .diff { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; padding: 16px; }
   .diff-icon { grid-row: span 2; margin: 0; }
-  .step-n { font-size: 2.25rem; margin-bottom: 14px; }
   .filter { padding: 0 14px; }
   .project-body { padding: 20px; }
   .footer-inner { flex-direction: column; align-items: flex-start; }

@@ -63,7 +63,7 @@
   $('experience').innerHTML = list(D.experience, (e) => `
     <li class="tl-item">
       <p class="tl-period">${esc(e.period)}</p>
-      <h3>${esc(e.role)} <span>· ${esc(e.company)}</span></h3>
+      <h3>${esc(e.role)} <span>${esc(e.company)}</span></h3>
       <p>${esc(e.description)}</p>
     </li>`);
 
