@@ -62,11 +62,11 @@ window.PORTFOLIO = {
   stack: [
     {
       group: 'Backend', icon: 'server',
-      items: [['PHP', 'php/php-original'], ['Laravel', 'laravel/laravel-original'], ['Eloquent', ''], ['APIs REST', ''], ['Autenticação', ''], ['Multi-tenancy', '']],
+      items: [['PHP', 'php/php-original'], ['Laravel', 'laravel/laravel-original'], ['Python', 'python/python-original'], ['Go', 'go/go-original'], ['Node.js', 'nodejs/nodejs-original'], ['Eloquent', ''], ['APIs REST', ''], ['Autenticação', ''], ['Multi-tenancy', '']],
     },
     {
       group: 'Banco de dados', icon: 'database',
-      items: [['MySQL', 'mysql/mysql-original'], ['SQL', ''], ['Modelagem de dados', ''], ['Queries complexas', ''], ['Migrations', ''], ['Relacionamentos', '']],
+      items: [['MySQL', 'mysql/mysql-original'], ['PostgreSQL', 'postgresql/postgresql-original'], ['SQL', ''], ['Modelagem de dados', ''], ['Queries complexas', ''], ['Migrations', ''], ['Relacionamentos', '']],
     },
     {
       group: 'Infraestrutura', icon: 'box',
@@ -74,7 +74,7 @@ window.PORTFOLIO = {
     },
     {
       group: 'Frontend', icon: 'layout',
-      items: [['HTML', 'html5/html5-original'], ['CSS', 'css3/css3-original'], ['JavaScript', 'javascript/javascript-original'], ['jQuery', 'jquery/jquery-original'], ['Bootstrap', 'bootstrap/bootstrap-original'], ['Blade', 'laravel/laravel-original'], ['AJAX', ''], ['DataTables', ''], ['Select2', ''], ['Chart.js', 'chartjs/chartjs-original']],
+      items: [['HTML', 'html5/html5-original'], ['CSS', 'css3/css3-original'], ['JavaScript', 'javascript/javascript-original'], ['TypeScript', 'typescript/typescript-original'], ['React', 'react/react-original'], ['jQuery', 'jquery/jquery-original'], ['Bootstrap', 'bootstrap/bootstrap-original'], ['Blade', 'laravel/laravel-original'], ['AJAX', ''], ['DataTables', ''], ['Select2', ''], ['Chart.js', 'chartjs/chartjs-original']],
     },
     {
       group: 'Integrações', icon: 'plug', span: 'full',

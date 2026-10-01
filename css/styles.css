@@ -328,6 +328,8 @@ button { font: inherit; color: inherit; }
 .project .btn-small { position: static; align-self: flex-start; margin-top: 4px; }
 /* Card inteiro clicável: o link "Ver projeto" cobre o card */
 .project .btn-small::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+/* transform faria o botão virar a referência do ::after e o clique no card se perderia */
+.project .btn-small:hover, .project .btn-small:active { transform: none; }
 .empty { color: var(--muted); padding: 40px 0; text-align: center; }
 
 /* Mockups gerados (quando não há imagem) */
